@@ -43,6 +43,6 @@ map.on('load', () => {
 
 ### Developing
 
-    npm install & npm start
+    yarn & yarn run start
 
 Visit http://localhost:9966/example/ to load the demo
