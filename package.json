@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "test": "NODE_ENV=test npm run lint && npm run tape",
     "lint": "eslint index.js",
-    "tape": "tape -r @babel/register test/*.test.js"
+    "tape": "tape -r @babel/register -r ./test/mock-browser.js test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,8 @@
     "mapbox-gl": "^0.44.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup": "^1.29.1",
+    "mapbox-gl-js-mock": "0.28.0",
+    "mock-browser": "^0.92.14",
     "tape": "^4.13.0"
   },
   "dependencies": {
