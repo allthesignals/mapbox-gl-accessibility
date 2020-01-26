@@ -6,7 +6,9 @@
   "scripts": {
     "start": "budo example/index.js --serve=example/bundle.js --live",
     "build": "rollup -c",
-    "test": "eslint index.js"
+    "test": "NODE_ENV=test npm run lint && npm run tape",
+    "lint": "eslint index.js",
+    "tape": "tape -r @babel/register test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "@babel/preset-env": "^7.8.3",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@babel/register": "^7.8.3",
     "babel-eslint": "^10.0.3",
     "babelify": "^10.0.0",
     "brfs": "^2.0.2",
@@ -42,7 +45,8 @@
     "insert-css": "^2.0.0",
     "mapbox-gl": "^0.44.2",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup": "^1.29.1"
+    "rollup": "^1.29.1",
+    "tape": "^4.13.0"
   },
   "dependencies": {
     "@turf/bbox": "^6.0.1",
